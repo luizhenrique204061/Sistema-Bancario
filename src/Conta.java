@@ -22,7 +22,7 @@ public abstract class Conta {
     // Método para depósito
     public void depositar(double valor) {
         if (valor > 0) {
-            this.saldo += valor;
+            setSaldo(getSaldo() + valor); 
             System.out.println("Depósito realizado com sucesso! Novo saldo: " + saldo);
         } else {
             System.out.println("Valor de depósito inválido.");
@@ -32,7 +32,7 @@ public abstract class Conta {
     // Método para saque
     public void sacar(double valor) {
         if (valor > 0 && saldo >= valor) {
-            this.saldo -= valor;
+            setSaldo(getSaldo() - valor);
             System.out.println("Saque realizado com sucesso! Novo saldo: " + saldo);
         } else {
             System.out.println("Saldo insuficiente ou valor inválido.");
